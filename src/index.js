@@ -11,6 +11,6 @@ app.use(morgan("combined", {
 }));
 app.use('/', routes);
 
-app.listen(process.env.APP_PORT, () => {
-	console.log(`Listening on port ${(process.env.NODE_ENV === 'development') ? 3001 : 80}`);
+app.listen(process.env.PORT || 3001, () => {
+	console.log(`Listening on port ${process.env.PORT}`);
 });
