@@ -6,12 +6,11 @@ const logger = require('../config/winston');
 const routes = require('../routes');
 const app = express();
 
-app.use(morgan({
-	format: "combined",
+app.use(morgan("combined", {
 	stream: logger.stream
 }));
 app.use('/', routes);
 
 app.listen(process.env.APP_PORT, () => {
-	console.log(`Listening on port ${process.env.APP_PORT}`);
+	console.log(`Listening on port ${(process.env.NODE_ENV === 'development') ? 3001 : 80}`);
 });
