@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "indent": ["error", "tab"],
+    "semi": "error",
+    "object-curly-spacing": ["error", "always"]
+  }
+}
