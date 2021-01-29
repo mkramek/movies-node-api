@@ -9,7 +9,7 @@ module.exports = (req, res) => {
 			imdbID: req.params.imdbID
 		}).toArray().then((data) => {
 			if (data.length > 0)
-				res.status(200).json(data).render('pages/movies', { movies: data, single: true });
+				res.status(200).render('pages/movies', { movies: data, single: true });
 			else res.status(404).json(data);
 		});
 	}).catch(error => console.error(error));
