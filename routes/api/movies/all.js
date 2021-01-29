@@ -8,7 +8,7 @@ module.exports = (req, res) => {
 		const movieCollection = db.collection('movie');
 		movies = movieCollection.find().toArray().then((data) => {
 			console.log(data);
-			res.status(200).render('pages/movies', { movies: data, single: false });
+			res.status(200).json(data).render('pages/movies', { movies: data, single: false });
 		});
 	}).catch(error => console.error(error));
 };
