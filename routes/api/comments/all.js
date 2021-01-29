@@ -7,8 +7,7 @@ module.exports = (req, res) => {
 		const db = client.db('movies-db');
 		const commCollection = db.collection('comments');
 		comments = commCollection.find().toArray().then((data) => {
-			console.log(data);
-			res.status(200).json(data);
+			res.status(200).render('pages/comments', { comments: data, single: false });
 		});
 	}).catch(error => console.error(error));
 };

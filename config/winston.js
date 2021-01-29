@@ -3,7 +3,7 @@ const winston = require('winston');
 const logger = winston.createLogger({
 	level: 'info',
 	format: winston.format.json(),
-	defaultMeta: {service: 'user-service'},
+	defaultMeta: { service: 'user-service' },
 	transports: [
 		new winston.transports.File({
 			filename: 'app_error.log',
@@ -17,6 +17,6 @@ logger.stream = {
 	write: (message, encoding) => {
 		logger.info(message);
 	}
-}
+};
 
 module.exports = logger;

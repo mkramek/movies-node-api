@@ -9,7 +9,7 @@ module.exports = (req, res) => {
 			movieId: req.params.movieId
 		}).toArray().then((data) => {
 			if (data.length > 0)
-				res.status(200).json(data);
+				res.status(200).render('pages/comments', { comments: data, single: true });
 			else res.status(404).json(data);
 		});
 	}).catch(error => console.error(error));

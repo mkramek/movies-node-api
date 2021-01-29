@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<div style="display: flex; flex-flow: row wrap; justify-content: space-evenly; align-items: center">
+	<% comments.forEach(comment => { %>
+		<div class="card blue-grey darken-1">
+			<div class="card-content white-text">
+				<span class="card-title">Comments for movie ID <%= comment.movieId %></span>
+				<ul>
+                    <% comment.comments.forEach((comm) => { %>
+                    <li><%= comm %></li>
+                    <% }); %>
+                </ul>
+			</div>
+		<% if (!single) { %>
+			<div class="card-action">
+				<a href="/api/comments/<%= comment.movieId %>">Comments for this movie</a>
+			</div>
+		<% } %>
+		</div>
+	<% }); %>
+</div>
+<%- include('../partials/footer') %>

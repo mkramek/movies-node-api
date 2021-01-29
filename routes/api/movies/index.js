@@ -48,7 +48,7 @@ movies.post('/', (req, response) => {
 							}
 						);
 					}
-					response.status(200).json({message: "Movies are updated"});
+					response.status(200).json({ message: "Movies are updated" });
 				}).catch(err => {
 					console.error(err);
 					response.status(500).json({ message: err });
