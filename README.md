@@ -1,24 +1,24 @@
-#movies-node-api
+# movies-node-api
 
-##Usage
+## Usage
 
-###`/api/movies`
+### `/api/movies`
 
 List all movies available in the database
 
-###`/api/movies/[imdbID]`
+### `/api/movies/[imdbID]`
 
 Show single movie with matching IMDB ID
 
-###`/api/comments`
+### `/api/comments`
 
 List all movies with assigned comments
 
-###`/api/comments/[imdbID]`
+### `/api/comments/[imdbID]`
 
 Show comments for the movie with specific IMDB ID
 
-##Deployment
+## Deployment
 
 The app is deployed by default on [Heroku](https://heroku.com/), available under [this link](https://movies-with-comments.herokuapp.com/).
 
